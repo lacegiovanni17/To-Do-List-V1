@@ -8,15 +8,14 @@ app.use("view engine", "ejs");
 app.get("/", function (req, res) {
   let today = new Date();
   let currentDay = today.getDay();
-  let day = "";
+  var day = "";
 
   if (currentDay === 6 || currentDay === 0) {
     day = "Weekend";
-    res.render("List", { kindOfDay: day });
   } else {
     day = "Weekday";
-    res.sendFile(__dirname + "/weekday.html");
   }
+  res.render("List", { kindOfDay: day });
 });
 
 app.listen(3000, function () {
