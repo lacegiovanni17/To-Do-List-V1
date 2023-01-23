@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 //the app.use has to be done below the position where you called express in the file.
-app.use("view engine", "ejs");
+app.set("view engine", "ejs");
 
 app.get("/", function (req, res) {
   let today = new Date();
